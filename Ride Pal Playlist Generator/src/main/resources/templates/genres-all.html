@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        body {
+            background-image: url(/image/admin-page.jpeg);
+            background-size: 100%;
+            background-attachment: fixed;
+            opacity: 0.8;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="../static/admin-style.css">
+
+    <title>Genres</title>
+</head>
+<body>
+<nav th:include="fragments/navbar"></nav>
+<br><br>
+
+<div class="container">
+    <div class="well span8 offset2" th:each="genre : ${genres}">
+        <div class="row-fluid music-row">
+            <div class="span4 col">
+                <div th:if="${genre.enabled == true}" style="text-align: center;">
+                    <img class="img-circle" src="/image/music.png" alt="Genre Pic"
+                         style="box-shadow:2px 2px;color: #E4DBDA">
+                </div>
+                <div th:unless="${genre.enabled == true}" style="text-align: center;">
+                    <img class="img-circle" src="/image/genre-music.jpg" alt="Genre Pic"
+                         style="box-shadow:2px 2px;color: #E4DBDA">
+                </div>
+            </div>
+            <div class="span4 col">
+                <table class="table table-condensed table-responsive table-music-information">
+                    <tbody>
+                    <tr>
+                        <td>Genre:</td>
+                        <td th:text="${genre.name}"></td>
+                    </tr>
+                    <tr th:if="${genre.enabled == true}">
+                        <td>Status:</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr th:unless="${genre.enabled == true}">
+                        <td>Status:</td>
+                        <td>Not Active</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="span4 col">
+                <span class="pull-right content-center">
+                    <a th:href="@{'/synchronize/' + ${genre.id}}" class="btn btn-success"
+                       type="button">Synchronize Genre</a>
+                    <br><br>
+                    <div th:if="${genre.enabled==true}">
+                        <a th:href="@{'/disable/' + ${genre.id}}" class="btn btn-danger btn-lg"
+                           type="button">Disable Genre</a>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:include="fragments/footer"></footer>
+
+</body>
+</html>

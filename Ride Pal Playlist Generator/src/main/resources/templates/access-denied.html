@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        body {
+            background-image: url(/image/profile.jpeg);
+            background-size: 100%;
+            background-attachment: fixed;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--     Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Access denied</title>
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid"style="opacity: 0.7;">
+    <h2 class="display-4"
+        style="text-align: center;
+                font-family: 'Kalam';
+                font-style: oblique;
+                font-weight: bold;
+                font-size: 40px ;color:#A65188">Access denied</h2>
+    <br/>
+    <p class="lead"
+       style="text-align: center;
+                font-family: 'Kalam';
+                font-style: oblique;
+                font-weight: bold;
+                font-size: 32px;color:#A65188;
+text-shadow: 2px 2px #A65170 ;">Sorry.You are not authorized to access this resource.</p>
+</div>
+<meta http-equiv="refresh" content="3;url=/"/>
+<span th:include="fragments/scripts-loader"></span>
+<footer th:include="fragments/footer"></footer>
+</body>
+</html>

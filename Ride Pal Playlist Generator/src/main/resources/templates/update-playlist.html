@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        body {
+            background-image: url(/image/generate.jpg);
+            background-size: 100%;
+            background-attachment: fixed;
+            opacity: 0.8;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--     Bootstrap core CSS -->
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.js" type="text/javascript"></script>
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/redmond/jquery-ui.css" rel="stylesheet"
+          type="text/css"/>
+
+    <title>Update Playlist</title>
+</head>
+<body>
+<nav th:include="fragments/navbar"></nav>
+</br></br></br>
+
+<div class="tab-content" id="nav-tabContent" style="opacity: 0.9;border-radius: 5%;padding-left: 340px">
+    <div class="container justify-content-center">
+        <form th:action="@{'/users/username/'+ ${user.username}+ '/'+${playlist.playlistId}+ '/update'}" th:object="${newPlaylist}" method="post"
+              enctype="multipart/form-data">
+            <div class="row" style="max-width: 800px;">
+                <div class="form-group">
+                    <label for="inputNewName" style="color: #E4DBDA">New Title</label>
+                    <input class="form-control" placeholder="Enter New Title"
+                           type="text" id="inputNewName" th:field="${newPlaylist.title}" minlength="6" maxlength="60"
+                           required autofocus>
+                </div>
+            </div>
+            <div class="row" style="max-width: 800px;">
+                <div class="form-group">
+                    <label for="inputNewDescription" style="color: #E4DBDA">New Title</label>
+                    <input class="form-control" placeholder="Update Description"
+                           type="text" id="inputNewDescription" th:field="${newPlaylist.description}" minlength="6"
+                           maxlength="200"
+                           required autofocus>
+                </div>
+            </div>
+
+            <div class="row" style="max-width: 800px;">
+                <div class="form-group">
+                    <input type="file" name="file" id="file" placeholder="Picture">
+                </div>
+            </div>
+            <div class="row" style="max-width: 800px;">
+                <div class="form-group"></br>
+                    <button type="submit" class="btn btn-primary" id="buttonGenerate">Update Playlist
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<span th:include="fragments/scripts-loader"></span>
+</body>
+</html>

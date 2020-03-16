@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Your generated playlist</title>
+
+
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico"/>
+    <link rel="mask-icon" type=""
+          href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+          color="#111"/>
+    <link rel="canonical" href="https://codepen.io/web-tiki/pen/YNKMpB/"/>
+    <style class="INLINE_PEN_STYLESHEET_ID">
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            background-image: url(/image/generate.jpg);
+            background-size: 100%;
+            background-attachment: fixed;
+            opacity: 0.8;
+            font-family: 'Cabin Condensed', sans-serif;
+        }
+
+        svg {
+            font-weight: bold;
+            max-width: 600px;
+            height: auto;
+        }
+    </style>
+    <script src="https://static.codepen.io/assets/editor/iframe/iframeConsoleRunner-dc0d50e60903d6825042d06159a8d5ac69a6c0e9bcef91e3380b17617061ce0f.js"></script>
+    <script src="https://static.codepen.io/assets/editor/iframe/iframeRefreshCSS-e120fd1ef4e480df85dd5faf7ee953074e62dc3d6da49fdf75fe06deb33f93c5.js"></script>
+    <script src="https://static.codepen.io/assets/editor/iframe/iframeRuntimeErrors-29f059e28a3c6d3878960591ef98b1e303c1fe1935197dae7797c017a3ca1e82.js"></script>
+
+    <title>User Playlists</title>
+</head>
+<body>
+
+<nav th:include="fragments/navbar"></nav>
+<div class="text-center">
+    <svg viewbox="0 0 100 20">
+        <defs>
+            <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="5%" stop-color="#E4DBDA"/>
+                <stop offset="95%" stop-color="#EE95F0"/>
+            </linearGradient>
+            <pattern id="wave" x="0" y="0" width="460" height="20" patternUnits="userSpaceOnUse">
+                <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
+                      mask="url(#mask)" fill="url(#gradient)">
+                    <animateTransform attributeName="transform" begin="0s" dur="1.5s" type="translate" from="0,0"
+                                      to="40,0" repeatCount="indefinite"/>
+                </path>
+            </pattern>
+        </defs>
+        <text text-anchor="middle" x="50" y="15" font-size="14" fill="url(#wave)" fill-opacity="0.6">PLAYLIST</text>
+        <text text-anchor="middle" x="50" y="15" font-size="14" fill="url(#gradient)" fill-opacity="0.2">PLAYLIST</text>
+    </svg>
+</div>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-db44b196776521ea816683afab021f757616c80860d31da6232dedb8d7cc4862.js"></script>
+<script id="INLINE_PEN_JS_ID" style="display:-webkit-box;
+                display:flex;
+                -webkit-box-orient:vertical;
+                -webkit-box-direction:normal;
+                flex-direction:column;
+                -webkit-box-pack:center;
+                justify-content:center;
+                -webkit-box-align:center;
+                align-items:center;">
+</script>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2" id="playlists-container">
+        <div class="col mb-4"  th:each="playlist : ${playlists}">
+
+            <div class="card" style="width: 20rem;opacity: 0.8">
+                <div th:if="${playlist.picture == null}">
+                    <img src="/image/music.png" style="max-width: 20rem">
+                </div>
+                <div th:unless="${playlist.picture == null}" style="max-width: 20rem">
+                    <img th:src="@{'data:image/jpeg;base64,' + ${playlist.picture}}" alt="image"  style="max-width: 20rem">
+                </div>
+                <div class="card-body rounded">
+                    <div class="desc" >
+                        <span th:text="'Title: ' + ${playlist.getTitle()}" style="color: #6A2773;justify-content: center"></span>
+                        <br><br>
+                        <span th:text="'Rank: ' + ${playlist.getRank()}" style="color: #6A2773"></span>
+                        <br><br>
+                        <span th:text="'Duration: ' + ${playlist.getDuration()}" style="color: #6A2773"></span>
+                    </div>
+                    <br>
+                </div>
+                <div class="row">
+                    <div class="col mb-4">
+                        <span class="pull-rigth content-center">
+                            <a th:href="@{'/playlists/' + ${playlist.playlistId}}" class="btn btn-link"
+                               type="button" style="color: #6A2773">View</a>
+                        </span>
+                    </div>
+                    <div class="col mb-4">
+                         <span>
+                            <a th:href="@{'/users/username/'+ ${user.username}+ '/'+${playlist.playlistId}+ '/edit'}" th:method="get" class="btn btn-link"
+                               type="button"style="color: #6A2773">Update</a>
+                        </span>
+                    </div>
+                    <div class="col mb-4">
+                         <span>
+                            <a th:href="@{'/users/username/' + ${user.username}+ '/'+ ${playlist.playlistId}+'/delete'}" th:method="get"
+                               class="btn btn-link" type="button" style="color: #361E40">Delete</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<span th:include="fragments/scripts-loader"></span>
+
+<footer th:include="fragments/footer"></footer>
+
+</body>
+</html>

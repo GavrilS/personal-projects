@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        body {
+            background-image: url(/image/generate.jpg);
+            background-size: 100%;
+            background-attachment: fixed;
+            opacity: 0.8;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--     Bootstrap core CSS -->
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.js" type="text/javascript"></script>
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/redmond/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <title>Create Playlist</title>
+</head>
+
+
+<body>
+<nav th:include="fragments/navbar"></nav>
+</br></br></br>
+<div class="tab-content" id="nav-tabContent" style="opacity: 0.9;border-radius: 5%;padding-left: 340px">
+    <div class="container justify-content-center">
+        <form th:action="@{/playlists/create}" th:object="${playlistGen}" method="post">
+            <div class="row row-cols-2" style="max-width: 800px;">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="inputStartingLocation" style="color: #E4DBDA">Starting Location</label>
+                        <input class="form-control" placeholder="Journey Starting Location"
+                               type="text" id="inputStartingLocation" th:field="${playlistGen.startLocation}">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <div class="col">
+                            <label for="inputDestination" style="color: #E4DBDA">Destination</label>
+                            <input class="form-control" placeholder="Journey Destination" type="text"
+                                   id="inputDestination" th:field="${playlistGen.endLocation}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-2" style="max-width: 800px;">
+                <div class="col">
+
+                    <div class="form-group">
+                        <label for="inputPlaylistTitle" style="color: #E4DBDA">Title</label>
+                        <input class="form-control" placeholder="Playlist Title" type="text"
+                               id="inputPlaylistTitle" th:field="${playlistGen.playlistTitle}">
+
+                    </div>
+                </div>
+                <div class="col">
+
+                    <div class="form-group">
+                        <div class="col">
+                            <label for="inputPlaylistDescription" style="color: #E4DBDA">Description</label>
+                            <input class="form-control" placeholder="Playlist Description" type="text"
+                                   id="inputPlaylistDescription" th:field="${playlistGen.playlistDescription}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-4" style="max-width: 800px">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="selectGenre1" style="color: #E4DBDA">Genre</label>
+                        </br>
+                        <select placeholder="Select Genre" id="selectGenre1" th:field="${playlistGen.genre1.genreId}">
+                            <option th:each="genre : ${activeGenres}"
+                                    th:value="${genre.id}"
+                                    th:text="${genre.name}">
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="inputGenre1Percentage" style="color: #E4DBDA">Percent</label>
+                        <input class="form-control" placeholder="Percent for genre" type="number"
+                               id="inputGenre1Percentage" th:field="${playlistGen.genre1.genrePercent}"
+                               style="max-width: 100px;">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox mr-sm-2"></br>
+                            <input type="checkbox" class="custom-control-input" th:field="${playlistGen.useSameArtist}"
+                                   id="customControlUseSameArtist">
+                            <label class="custom-control-label" for="customControlUseSameArtist" style="color: #E4DBDA">Use
+                                multiple tracks per artist</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-4" style="max-width: 800px">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="selectGenre2" style="color: #E4DBDA">Genre</label>
+                        </br>
+                        <select placeholder="Select Genre" id="selectGenre2" th:field="${playlistGen.genre2.genreId}">
+                            <option th:each="genre : ${activeGenres}"
+                                    th:value="${genre.id}"
+                                    th:text="${genre.name}">
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="inputGenre2Percentage" style="color: #E4DBDA">Percent</label>
+                        <input class="form-control" placeholder="Percent for genre" type="number"
+                               id="inputGenre2Percentage" th:field="${playlistGen.genre2.genrePercent}"
+                               style="max-width: 100px;">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox mr-sm-2"></br>
+                            <input type="checkbox" class="custom-control-input" th:field="${playlistGen.useTopTracks}"
+                                   id="customControlUseTopTracks">
+                            <label class="custom-control-label" for="customControlUseTopTracks" style="color: #E4DBDA">Use
+                                top
+                                tracks</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-4" style="max-width: 800px">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="selectGenre3" style="color: #E4DBDA">Genre</label>
+                        </br>
+                        <select placeholder="Select Genre" id="selectGenre3" th:field="${playlistGen.genre3.genreId}">
+                            <option th:each="genre : ${activeGenres}"
+                                    th:value="${genre.id}"
+                                    th:text="${genre.name}">
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="inputGenre3Percentage" style="color: #E4DBDA">Percent</label>
+                        <input class="form-control" placeholder="Percent for genre" type="number"
+                               id="inputGenre3Percentage" th:field="${playlistGen.genre3.genrePercent}"
+                               style="max-width: 100px;">
+                    </div>
+                    <div class="class" id="percentageText" style="color:#E4DBDA"></div>
+                </div>
+                <div class="col">
+                    <div class="form-group"></br>
+                        <button type="submit" class="btn btn-primary" id="buttonGenerate" disabled>Generate Playlist
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<footer th:include="fragments/footer"></footer>
+<script>
+    $(document).ready(function () {
+
+        $("#inputGenre1Percentage, #inputGenre2Percentage, #inputGenre3Percentage").keyup(function () {
+
+            if (parseInt($("#inputGenre1Percentage").val()) +
+                parseInt($("#inputGenre2Percentage").val()) +
+                parseInt($("#inputGenre3Percentage").val()) === 100) {
+                $("#buttonGenerate").removeAttr('disabled', 'disabled');
+                $("#percentageText").text('Thank you! :)');
+
+            } else {
+                $("#percentageText").text('The total percentage should equals to 100!');
+                $("#buttonGenerate").attr('disabled', 'disabled');
+            }
+        })
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#inputStartingLocation,#inputDestination").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "http://dev.virtualearth.net/REST/v1/Locations",
+                    dataType: "jsonp",
+                    data: {
+                        key: "AicTG1qkr40K7KE6I0E6gFah2AoV0N1f_MoBfUaL3Xgn4zEK7DfPbUa8GjbDEM6x",
+                        q: request.term
+                    },
+                    jsonp: "jsonp",
+                    success: function (data) {
+                        var result = data.resourceSets[0];
+                        if (result) {
+                            if (result.estimatedTotal > 0) {
+                                response($.map(result.resources, function (item) {
+                                    return {
+                                        data: item,
+                                        label: item.name + ' (' + item.address.countryRegion + ')',
+                                        value: item.name
+                                    }
+                                }));
+                            }
+                        }
+                    }
+                });
+            },
+            minLength: 1
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        body {
+            background-image: url(/image/generate.jpg);
+            background-size: 100%;
+            background-attachment: fixed;
+            opacity: 0.8;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--     Bootstrap core CSS -->
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.js" type="text/javascript"></script>
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/redmond/jquery-ui.css" rel="stylesheet"
+          type="text/css"/>
+    <title>Filter By Genre</title>
+</head>
+<body>
+<nav th:include="fragments/navbar"></nav>
+</br></br></br>
+
+<div class="tab-content" id="nav-tabContent" style="opacity: 0.9;border-radius: 5%;padding-left: 340px">
+    <div class="container justify-content-center">
+        <div class="col-md-6 justify-content-center" style="max-width: 400px;">
+            <form th:action="@{/playlists/filterByGenre}" method="get">
+                <div class="form-group">
+                    <label for="filterByGenre" style="color: #EFD8F2;">Filter By Genre</label>
+                    <input type="text" name="genreName" class="form-control" id="filterByGenre"
+                           placeholder="Enter Playlist Genre Name" style="border-color: #6A2773" required autofocus>
+                </div>
+                <button type="submit" class="btn btn-info" style="background-color:#EFD8F2;border-color:#6A2773;color: #361E40 ">Filter</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<span th:include="fragments/scripts-loader"></span>
+<footer th:include="fragments/footer"></footer>
+</body>
+</html>

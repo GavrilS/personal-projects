@@ -1,0 +1,36 @@
+/*-------------------------
+	Responsive Styles
+-------------------------*/
+
+@media screen and (max-width: 767px) {
+    .player-wrap.fxmusica {
+        max-width: 480px;
+        float: none;
+        margin: 0 auto;
+    }
+    .fxmusica .player-main-block,
+    .trackInfo {
+        .fxmusica .player-layout-seven &,
+        .player-layout-eight & {
+            width: 100% !important;
+        }
+    }
+    .navbar-header a.btn-buy {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .fxmusica .player-main-block,
+    .fxmusica .trackInfo {
+        width: 100% !important;
+        float: none;
+    }
+    .title-block h2 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .page-title {
+        font-size: 40px;
+    }
+}

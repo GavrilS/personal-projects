@@ -1,0 +1,658 @@
+@charset "UTF-8";
+/*
+|----------------------------------------------------------------------------
+FxMusica Player Style
+|----------------------------------------------------------------------------
+*/
+.fxmusica .player-main-block {
+    margin-bottom: 10px;
+}
+
+.fxmusica .album-art-block .jp-jplayer > img {
+    max-width: 100%;
+    height: auto !important;
+}
+
+.fxmusica .jp-jplayer,
+.fxmusica .jp-video,
+.fxmusica .jp-video > div {
+    height: auto !important;
+    width: 100% !important;
+}
+
+.fxmusica .jp-jplayer {
+    height: 0px !important;
+    position: relative;
+    padding-top: 75%;
+    overflow: hidden;
+}
+
+.fxmusica .jp-jplayer img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    height: auto;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.fxmusica .album-art-block.size-two .jp-jplayer {
+    padding-top: 125%;
+}
+
+.fxmusica .player-main-block .track-meta-info {
+    display: block !important;
+}
+
+.fxmusica .album-art-block {
+    position: relative;
+}
+
+.fxmusica .album-art-block .track-meta-info {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #fff;
+    z-index: 99;
+    background: transparent;
+}
+
+.fxmusica .album-art-block .jp-title {
+    font-size: 18px;
+    display: block;
+    background: rgba(0, 0, 0, 0.33);
+}
+
+.fxmusica .overlay-one {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.fxmusica .audio-controller-wrap {
+    padding: 20px 20px 10px 20px;
+    background: #f7f7f7;
+    min-height: 150px;
+    margin-bottom: 10px;
+}
+
+.player-layout-seven .fxmusica .audio-controller-wrap, .player-layout-eight .fxmusica .audio-controller-wrap {
+    margin: 0;
+}
+
+.fxmusica .jp-video .jp-interface,
+.fxmusica .jp-details,
+.fxmusica .jp-playlist {
+    border: none;
+}
+
+.fxmusica .jp-interface {
+    background: transparent;
+}
+
+.fxmusica .jp-controls-holder {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+    top: 0;
+}
+
+.fxmusica .jp-controls .controller-common {
+    text-indent: 0;
+    position: relative;
+    z-index: 999;
+}
+
+.fxmusica .jp-controls button {
+    display: inline-block;
+    float: none;
+}
+
+.fxmusica .jp-video .jp-type-playlist .jp-controls {
+    width: 100%;
+    text-align: center;
+    float: none;
+    margin: 0 auto 12px auto;
+}
+
+.fxmusica .jp-video .jp-progress {
+    margin-bottom: 15px;
+}
+
+.fxmusica .jp-play-bar {
+    background: url(../assets/image/player-clr.jpg) 0 0 repeat-x;
+}
+
+.fxmusica .controller-common {
+    height: 33px;
+    width: 33px;
+    background: #fc73c5;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 33px;
+    cursor: pointer;
+    margin: 0 3px;
+    display: inline-block;
+    position: relative;
+}
+
+.fxmusica .controller-common:focus {
+    background: #fc73c5;
+}
+
+.fxmusica .controller-common:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    font-size: 10px;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'FontAwesome';
+}
+
+.fxmusica .jp-state-playing .jp-play {
+    background: #fc73c5;
+}
+
+.fxmusica .jp-state-playing .jp-play:focus {
+    background: #fc73c5;
+}
+
+.fxmusica .jp-previous:before {
+    content: "\f048";
+}
+
+.fxmusica .jp-play:before {
+    content: "\f04b";
+}
+
+.fxmusica .jp-state-playing .jp-play:before {
+    content: "\f04c";
+}
+
+.fxmusica .jp-play.active:before {
+    content: "\f04c";
+}
+
+.fxmusica .jp-next:before {
+    content: "\f051";
+}
+
+.fxmusica .jp-video .jp-volume-controls {
+    left: 5px;
+}
+
+.fxmusica .jp-mute:focus,
+.fxmusica .jp-state-muted .jp-mute:focus,
+.fxmusica .jp-state-muted .jp-mute {
+    background: transparent;
+}
+
+.fxmusica .jp-state-muted .jp-mute:focus:before,
+.fxmusica .jp-state-muted .jp-mute:before {
+    content: "\f026";
+}
+
+.fxmusica .jp-volume-controls button {
+    text-indent: 0px;
+    background: transparent;
+    height: 30px;
+    width: 30px;
+    left: -10px;
+    top: -9px;
+}
+
+.fxmusica .jp-volume-controls button:before {
+    content: "\f028";
+    left: 0;
+    right: 0;
+    top: 0;
+    font-size: 14px;
+    color: #111;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'FontAwesome';
+}
+
+.fxmusica .jp-volume-bar {
+    width: 90px;
+    height: 2px;
+    overflow: visible;
+}
+
+.fxmusica .jp-volume-bar-value {
+    position: relative;
+    top: -1px;
+    background: url(../assets/image/deep-gray-clr.jpg) 0 0px repeat-x;
+}
+
+.fxmusica .jp-volume-bar-value:before {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 2px;
+    background: #b7b7b7;
+    right: 0;
+    top: -3px;
+}
+
+.fxmusica .jp-volume-bar {
+    background: #d7d7d7;
+}
+
+.fxmusica .audio-controller-block {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.fxmusica .jp-toggles button {
+    text-indent: 0;
+}
+
+.fxmusica .jp-state-shuffled .jp-shuffle:focus,
+.fxmusica .jp-state-shuffled .jp-shuffle,
+.fxmusica .jp-shuffle:focus,
+.fxmusica .jp-shuffle,
+.fxmusica .jp-state-looped .jp-repeat,
+.fxmusica .jp-repeat:focus,
+.fxmusica .jp-state-looped .jp-repeat:focus {
+    background: transparent;
+}
+
+.fxmusica .jp-video .jp-toggles {
+    right: 0;
+    width: auto;
+    z-index: 99;
+}
+
+.fxmusica .jp-toggles button {
+    margin: 0;
+    position: relative;
+    background: transparent;
+}
+
+.fxmusica .jp-toggles button:before {
+    left: 0;
+    right: 0;
+    top: 0;
+    font-size: 14px;
+    color: #111;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'FontAwesome';
+}
+
+.fxmusica .jp-shuffle:before {
+    content: "\f074";
+}
+
+.fxmusica .jp-state-shuffled .jp-shuffle:before {
+    color: #fc73c5;
+}
+
+.fxmusica .jp-repeat:before {
+    content: "\f01e";
+}
+
+.fxmusica .jp-state-looped .jp-repeat:before {
+    color: #fc73c5;
+}
+
+.fxmusica .jp-toggles .playlist-btn {
+    width: 20px;
+}
+
+.fxmusica .playlist-btn:before {
+    content: "\f0ca";
+}
+
+.fxmusica .jp-wish:before {
+    content: "\f08a";
+}
+
+.fxmusica .jp-wish.active:before {
+    content: "";
+}
+
+.fxmusica .playlist-btn.active:before {
+    color: #fc73c5;
+}
+
+.fxmusica .duration-2 {
+    text-align: center;
+    font-size: 0;
+    line-height: 10px;
+}
+
+.fxmusica .duration-2 .jp-current-time,
+.fxmusica .duration-2 .jp-duration {
+    display: inline-block;
+    width: 50px;
+    margin: 0;
+    float: none;
+    text-align: center;
+    font-style: normal;
+}
+
+.fxmusica .duration-2 .jp-current-time,
+.fxmusica .duration-2 .jp-duration,
+.fxmusica .duration-2 .divider {
+    font-size: 14px;
+}
+
+.fxmusica .song-meta-data span {
+    display: block;
+    line-height: 23px;
+}
+
+.fxmusica .jp-playlist li {
+    border: none;
+}
+
+.fxmusica div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
+    list-style: none;
+}
+
+.fxmusica .slimScrollBar {
+    width: 6px !important;
+    opacity: 1 !important;
+    right: 0 !important;
+    border-radius: 0px !important;
+    background: #fc73c5 !important;
+    display: none;
+}
+
+.fxmusica .playlist-block,
+.fxmusica .playlist-block-style-two,
+.fxmusica .playlist-block-style-three,
+.fxmusica .playlist-block-style-four,
+.fxmusica .playlist-block-style-five {
+    padding: 20px 30px 0px 30px;
+    background: #f7f7f7;
+    border-right: 6px solid #b7b7b7;
+}
+
+.fxmusica .amplitude-song-container {
+    position: relative;
+    margin: 20px 0;
+}
+
+.fxmusica .track-right-content {
+    position: absolute;
+    right: 0px;
+    top: 15px;
+}
+
+.fxmusica .amplitude-song-container.amplitude-playing:before {
+    content: '';
+    height: 100%;
+    width: 4px;
+    position: absolute;
+    left: -30px;
+    top: 0;
+    background: #fc73c5;
+}
+
+.fxmusica .amplitude-song-container.amplitude-playing .song-title {
+    color: #fc73c5;
+}
+
+.fxmusica div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
+    padding-left: 0;
+}
+
+.fxmusica div.jp-type-playlist div.jp-playlist li.jp-playlist-current:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    left: -30px;
+    background: #fc73c5;
+}
+
+.fxmusica div.jp-type-playlist div.jp-playlist li:last-child {
+    padding: 0;
+}
+
+.fxmusica .jp-playlist ul {
+    padding: 0;
+}
+
+.fxmusica .jp-playlist ul li {
+    padding: 0;
+    margin-bottom: 28px;
+    position: relative;
+}
+
+.fxmusica .jp-playlist ul li:last-child {
+    margin-bottom: 0;
+}
+
+.fxmusica .jp-playlist ul li .duration {
+    float: right;
+    text-align: right;
+    font-size: 14px;
+}
+
+.fxmusica .jp-playlist-item h4 {
+    font-size: 16px;
+    margin-bottom: 0;
+    line-height: 15px;
+}
+
+.fxmusica div.jp-type-playlist div.jp-playlist a.jp-playlist-current,
+.fxmusica div.jp-type-playlist div.jp-playlist a:hover {
+    color: #fc73c5;
+}
+
+.fxmusica .single-audio-controller {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.fxmusica .single-audio-controller .jp-controls {
+    position: absolute;
+    top: -4px;
+}
+
+.fxmusica .single-audio-controller .jp-toggles {
+    position: relative;
+}
+
+.fxmusica .single-audio-controller .jp-toggles button {
+    float: right;
+    width: 20px;
+}
+
+.fxmusica .jp-video .single-audio-controller .jp-toggles {
+    width: 49%;
+}
+
+.fxmusica .player-layout-four .audio-controller-wrap,
+.fxmusica .player-layout-nine .audio-controller-wrap {
+    background: transparent;
+    padding: 0;
+}
+
+.fxmusica .player-layout-four .album-art-block,
+.fxmusica .player-layout-nine .album-art-block {
+    margin-bottom: 40px;
+}
+
+.fxmusica .player-layout-four .jp-details,
+.fxmusica .player-layout-nine .jp-details {
+    position: relative;
+    margin-bottom: 25px;
+    text-align: center;
+    background: transparent;
+}
+
+.fxmusica .player-layout-four,
+.fxmusica .player-block {
+    padding: 30px 20px 25px 20px;
+    background: #e7e7e7;
+}
+
+.fxmusica .player-layout-five .audio-controller-wrap,
+.fxmusica .player-layout-ten .audio-controller-wrap {
+    padding: 0;
+}
+
+.fxmusica .player-layout-five .jp-controls-holder,
+.fxmusica .player-layout-ten .jp-controls-holder {
+    position: absolute;
+    top: 80px;
+}
+
+.fxmusica .player-layout-five .jp-controls-holder button:before,
+.fxmusica .player-layout-ten .jp-controls-holder button:before {
+    color: #fff;
+}
+
+.fxmusica .player-layout-five .jp-wish.active:before,
+.fxmusica .player-layout-ten .jp-wish.active:before {
+    color: #fc73c5;
+}
+
+.fxmusica .player-layout-five .jp-details,
+.fxmusica .player-layout-ten .jp-details {
+    top: 30px;
+    bottom: auto;
+}
+
+.fxmusica .player-layout-five .jp-volume-controls,
+.fxmusica .player-layout-ten .jp-volume-controls {
+    left: 40px;
+}
+
+.fxmusica .player-layout-five .jp-toggles,
+.fxmusica .player-layout-ten .jp-toggles {
+    right: 40px;
+}
+
+.fxmusica .player-layout-five .jp-volume-bar,
+.fxmusica .player-layout-ten .jp-volume-bar {
+    width: 130px;
+}
+
+.fxmusica .player-layout-five .player-controller-style-two .jp-controls,
+.fxmusica .player-layout-ten .player-controller-style-two .jp-controls {
+    top: 20px;
+}
+
+.fxmusica .player-layout-five.jp-state-shuffled .jp-controls-holder .jp-shuffle:before,
+.fxmusica .player-layout-ten.jp-state-shuffled .jp-controls-holder .jp-shuffle:before {
+    color: #fc73c5;
+}
+
+.fxmusica .player-layout-five.jp-state-looped .jp-controls-holder .jp-repeat:before,
+.fxmusica .player-layout-ten.jp-state-shuffled .jp-controls-holder .jp-repeat:before {
+    color: #fc73c5;
+}
+
+.fxmusica .player-layout-six .jp-details,
+.fxmusica .player-layout-eleven .jp-details {
+    top: 20px;
+    bottom: 0;
+}
+
+.fxmusica .player-layout-six .audio-controller-wrap,
+.fxmusica .player-layout-eleven .audio-controller-wrap {
+    padding: 0;
+    position: relative;
+}
+
+.fxmusica .player-layout-six .jp-volume-bar,
+.fxmusica .player-layout-eleven .jp-volume-bar {
+    margin-left: 10px;
+    height: 10px;
+}
+
+.fxmusica .player-layout-six .jp-volume-bar-value,
+.fxmusica .player-layout-eleven .jp-volume-bar-value {
+    top: 0;
+    height: 10px;
+    background: url(../assets/image/player-clr.jpg) 0 0 repeat-x;
+}
+
+.fxmusica .player-layout-six .jp-volume-bar-value:before,
+.fxmusica .player-layout-eleven .jp-volume-bar-value:before {
+    content: none;
+}
+
+.fxmusica .player-layout-six .player-controller-style-three,
+.fxmusica .player-layout-eleven .player-controller-style-three {
+    position: relative;
+}
+
+.fxmusica .player-layout-six .player-controller-style-three .jp-controls,
+.fxmusica .player-layout-eleven .player-controller-style-three .jp-controls {
+    overflow: visible;
+    text-align: left;
+    display: inline-block;
+    width: 70%;
+    padding-left: 15px;
+}
+
+.fxmusica .player-layout-six .player-controller-style-three .jp-volume-controls,
+.fxmusica .player-layout-eleven .player-controller-style-three .jp-volume-controls {
+    position: relative;
+    display: inline;
+    vertical-align: top;
+    top: 6px;
+    left: 10px;
+}
+
+.fxmusica .player-layout-six .player-controller-style-three .jp-controls-holder,
+.fxmusica .player-layout-eleven .player-controller-style-three .jp-controls-holder {
+    width: 28%;
+    display: inline-block;
+}
+
+.fxmusica .player-layout-six .player-controller-style-three .jp-controls-holder .jp-toggles,
+.fxmusica .player-layout-eleven .player-controller-style-three .jp-controls-holder .jp-toggles {
+    top: -30px;
+    right: 10px;
+}
+
+.fxmusica .player-layout-six .jp-progress,
+.fxmusica .player-layout-eleven .jp-progress {
+    margin-bottom: 30px;
+}
+
+.fxmusica .player-layout-six .duration-2,
+.fxmusica .player-layout-eleven .duration-2 {
+    position: absolute;
+    bottom: 0;
+    height: 27px;
+    width: 100%;
+    background: #777777;
+}
+
+.fxmusica .player-layout-six .duration-2 span,
+.fxmusica .player-layout-eleven .duration-2 span {
+    line-height: 27px;
+    color: #fff;
+}
+
+.fxmusica .player-main-block {
+    width: 50%;
+    float: left;
+}
+
+.fxmusica .trackInfo {
+    width: 50% !important;
+    float: right;
+    position: relative;
+}

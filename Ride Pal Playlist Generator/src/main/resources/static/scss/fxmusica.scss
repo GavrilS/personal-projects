@@ -1,0 +1,591 @@
+/*
+|----------------------------------------------------------------------------
+FxMusica Player Style
+|----------------------------------------------------------------------------
+*/
+
+@import "./variable";
+@import "./mixins";
+.fxmusica {
+    .player-main-block {
+        margin-bottom: 10px;
+    }
+    .album-art-block {
+        .jp-jplayer>img {
+            max-width: 100%;
+            height: auto !important;
+        }
+    }
+    .jp-jplayer,
+    .jp-video,
+    .jp-video>div {
+        height: auto !important;
+        width: 100% !important;
+    }
+    .jp-jplayer {
+        height: 0px !important;
+        position: relative;
+        padding-top: 75%;
+        overflow: hidden;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-width: 100%;
+            height: auto;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .album-art-block.size-two .jp-jplayer {
+        padding-top: 125%;
+    }
+    .player-main-block {
+        .track-meta-info {
+            display: block !important;
+        }
+    }
+    .album-art-block {
+        position: relative;
+        .track-meta-info {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            color: $white_clr;
+            z-index: 99;
+            background: transparent;
+        }
+        .jp-title {
+            font-size: 18px;
+            display: block;
+            background: rgba(0, 0, 0, 0.33);
+        }
+    }
+    .overlay-one {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .3);
+    }
+    .audio-controller-wrap {
+        padding: 20px 20px 10px 20px;
+        background: $light_gray;
+        min-height: 150px;
+        margin-bottom: 10px;
+        .player-layout-seven &,
+        .player-layout-eight & {
+            margin: 0;
+        }
+    }
+    .jp-video .jp-interface,
+    .jp-details,
+    .jp-playlist {
+        border: none;
+    }
+    .jp-interface {
+        background: transparent;
+    }
+    .jp-controls-holder {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        overflow: visible;
+        top: 0;
+    }
+    .jp-controls {
+        .controller-common {
+            text-indent: 0;
+            position: relative;
+            z-index: 999;
+        }
+    }
+    .jp-controls button {
+        display: inline-block;
+        float: none;
+    }
+    .jp-video .jp-type-playlist .jp-controls {
+        width: 100%;
+        text-align: center;
+        float: none;
+        margin: 0 auto 12px auto;
+    }
+    .jp-video .jp-progress {
+        margin-bottom: 15px;
+    }
+    .jp-play-bar {
+        background: url(../assets/image/player-clr.jpg) 0 0 repeat-x;
+    }
+    .controller-common {
+        height: 33px;
+        width: 33px;
+        background: $player_pink_clr;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 33px;
+        cursor: pointer;
+        margin: 0 3px;
+        display: inline-block;
+        position: relative;
+        &:focus {
+            background: $player_pink_clr;
+        }
+        &:before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            font-size: 10px;
+            color: $white_clr;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'FontAwesome';
+        }
+    }
+    .jp-state-playing .jp-play {
+        background: $player_pink_clr;
+        &:focus {
+            background: $player_pink_clr;
+        }
+    }
+    .jp-previous {
+        &:before {
+            content: "\f048";
+        }
+    }
+    .jp-play {
+        &:before {
+            content: "\f04b";
+        }
+    }
+    .jp-state-playing {
+        .jp-play {
+            &:before {
+                content: "\f04c";
+            }
+        }
+    }
+    .jp-play.active {
+        &:before {
+            content: "\f04c";
+        }
+    }
+    .jp-next {
+        &:before {
+            content: "\f051";
+        }
+    }
+    .jp-video .jp-volume-controls {
+        left: 5px;
+    }
+    .jp-mute:focus,
+    .jp-state-muted .jp-mute:focus,
+    .jp-state-muted .jp-mute {
+        background: transparent;
+    }
+    .jp-state-muted .jp-mute:focus,
+    .jp-state-muted .jp-mute {
+        &:before {
+            content: "\f026";
+        }
+    }
+    .jp-volume-controls button {
+        text-indent: 0px;
+        background: transparent;
+        height: 30px;
+        width: 30px;
+        left: -10px;
+        top: -9px;
+        &:before {
+            content: "\f028";
+            left: 0;
+            right: 0;
+            top: 0;
+            font-size: 14px;
+            color: $lime_dark_clr;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'FontAwesome';
+        }
+    }
+    .jp-volume-bar {
+        width: 90px;
+        height: 2px;
+        overflow: visible;
+    }
+    .jp-volume-bar-value {
+        position: relative;
+        top: -1px;
+        background: url(../assets/image/deep-gray-clr.jpg) 0 0px repeat-x;
+        &:before {
+            content: '';
+            position: absolute;
+            height: 10px;
+            width: 2px;
+            background: $deep_gray;
+            right: 0;
+            top: -3px;
+        }
+    }
+    .jp-volume-bar {
+        background: $semi_deep_gray;
+    }
+    .audio-controller-block {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .jp-toggles button {
+        text-indent: 0;
+    }
+    .jp-state-shuffled .jp-shuffle:focus,
+    .jp-state-shuffled .jp-shuffle,
+    .jp-shuffle:focus,
+    .jp-shuffle,
+    .jp-state-looped .jp-repeat,
+    .jp-repeat:focus,
+    .jp-state-looped .jp-repeat:focus {
+        background: transparent;
+    }
+    .jp-video .jp-toggles {
+        right: 0;
+        width: auto;
+        z-index: 99;
+    }
+    .jp-toggles button {
+        margin: 0;
+        position: relative;
+        background: transparent;
+        &:before {
+            left: 0;
+            right: 0;
+            top: 0;
+            font-size: 14px;
+            color: $lime_dark_clr;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'FontAwesome';
+        }
+    }
+    .jp-shuffle {
+        &:before {
+            content: "\f074";
+        }
+    }
+    .jp-state-shuffled .jp-shuffle {
+        &:before {
+            color: $player_pink_clr;
+        }
+    }
+    .jp-repeat {
+        &:before {
+            content: "\f01e";
+        }
+    }
+    .jp-state-looped .jp-repeat {
+        &:before {
+            color: $player_pink_clr;
+        }
+    }
+    .jp-toggles .playlist-btn {
+        width: 20px;
+    }
+    .playlist-btn {
+        &:before {
+            content: "\f0ca";
+        }
+    }
+    .jp-wish {
+        &:before {
+            content: "\f08a";
+        }
+    }
+    .jp-wish.active {
+        &:before {
+            content: "\f004"
+        }
+    }
+    .playlist-btn.active {
+        &:before {
+            color: $player_pink_clr;
+        }
+    }
+    .duration-2 {
+        text-align: center;
+        font-size: 0;
+        line-height: 10px;
+        .jp-current-time,
+        .jp-duration {
+            display: inline-block;
+            width: 50px;
+            margin: 0;
+            float: none;
+            text-align: center;
+            font-style: normal;
+        }
+        .jp-current-time,
+        .jp-duration,
+        .divider {
+            font-size: 14px;
+        }
+    }
+    .song-meta-data {
+        span {
+            display: block;
+            line-height: 23px;
+        }
+        .song-title {}
+    }
+    .jp-playlist li {
+        border: none;
+    }
+    div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
+        list-style: none;
+    }
+    .slimScrollBar {
+        width: 6px !important;
+        opacity: 1 !important;
+        right: 0 !important;
+        border-radius: 0px !important;
+        background: $player_pink_clr !important;
+        display: none;
+    }
+    .playlist-block,
+    .playlist-block-style-two,
+    .playlist-block-style-three,
+    .playlist-block-style-four,
+    .playlist-block-style-five {
+        padding: 20px 30px 0px 30px;
+        background: $light_gray;
+        border-right: 6px solid $deep_gray;
+    }
+    .amplitude-song-container {
+        position: relative;
+        margin: 20px 0;
+    }
+    .track-right-content {
+        position: absolute;
+        right: 0px;
+        top: 15px;
+    }
+    .amplitude-song-container.amplitude-playing {
+        &:before {
+            content: '';
+            height: 100%;
+            width: 4px;
+            position: absolute;
+            left: -30px;
+            top: 0;
+            background: $player_pink_clr;
+        }
+        .song-title {
+            color: $player_pink_clr;
+        }
+    }
+    div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
+        padding-left: 0;
+        &:before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 5px;
+            left: -30px;
+            background: $player_pink_clr;
+        }
+    }
+    div.jp-type-playlist div.jp-playlist li:last-child {
+        padding: 0;
+    }
+    .jp-playlist ul {
+        padding: 0;
+        li {
+            padding: 0;
+            margin-bottom: 28px;
+            position: relative;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            .duration {
+                float: right;
+                text-align: right;
+                font-size: 14px;
+            }
+        }
+    }
+    .jp-playlist-item {
+        h4 {
+            font-size: 16px;
+            margin-bottom: 0;
+            line-height: 15px;
+        }
+    }
+    div.jp-type-playlist div.jp-playlist a.jp-playlist-current,
+    div.jp-type-playlist div.jp-playlist a:hover {
+        color: $player_pink_clr;
+    }
+    .single-audio-controller {
+        position: relative;
+        margin-bottom: 10px;
+        .jp-controls {
+            position: absolute;
+            top: -4px;
+        }
+        .jp-toggles {
+            position: relative;
+        }
+        .jp-toggles button {
+            float: right;
+            width: 20px;
+        }
+    }
+    .jp-video .single-audio-controller .jp-toggles {
+        width: 49%;
+    }
+    .player-layout-four,
+    .player-layout-nine {
+        .audio-controller-wrap {
+            background: transparent;
+            padding: 0;
+        }
+        .album-art-block {
+            margin-bottom: 40px;
+        }
+        .jp-details {
+            position: relative;
+            margin-bottom: 25px;
+            text-align: center;
+            background: transparent;
+        }
+    }
+    .player-layout-four,
+    .player-block {
+        padding: 30px 20px 25px 20px;
+        background: $smi_gray;
+    }
+    .player-layout-five,
+    .player-layout-ten {
+        .audio-controller-wrap {
+            padding: 0;
+        }
+        .jp-controls-holder {
+            position: absolute;
+            top: 80px;
+            button {
+                &:before {
+                    color: $white_clr;
+                }
+            }
+        }
+        .jp-wish.active {
+            &:before {
+                color: $player_pink_clr;
+            }
+        }
+        .jp-details {
+            top: 30px;
+            bottom: auto;
+        }
+        .jp-volume-controls {
+            left: 40px;
+        }
+        .jp-toggles {
+            right: 40px;
+        }
+        .jp-volume-bar {
+            width: 130px;
+        }
+        .player-controller-style-two .jp-controls {
+            top: 20px;
+        }
+    }
+    .player-layout-five.jp-state-shuffled,
+    .player-layout-ten.jp-state-shuffled {
+        .jp-controls-holder {
+            .jp-shuffle:before {
+                color: $player_pink_clr;
+            }
+        }
+    }
+    .player-layout-five.jp-state-looped,
+    .player-layout-ten.jp-state-shuffled {
+        .jp-controls-holder {
+            .jp-repeat:before {
+                color: $player_pink_clr;
+            }
+        }
+    }
+    .player-layout-six,
+    .player-layout-eleven {
+        .jp-details {
+            top: 20px;
+            bottom: 0;
+        }
+        .audio-controller-wrap {
+            padding: 0;
+            position: relative;
+        }
+        .jp-volume-bar {
+            margin-left: 10px;
+            height: 10px;
+        }
+        .jp-volume-bar-value {
+            top: 0;
+            height: 10px;
+            background: url(../assets/image/player-clr.jpg) 0 0 repeat-x;
+            &:before {
+                content: none;
+            }
+        }
+        .player-controller-style-three {
+            position: relative;
+            .jp-controls {
+                overflow: visible;
+                text-align: left;
+                display: inline-block;
+                width: 70%;
+                padding-left: 15px;
+            }
+            .jp-volume-controls {
+                position: relative;
+                display: inline;
+                vertical-align: top;
+                top: 6px;
+                left: 10px;
+            }
+            .jp-controls-holder {
+                width: 28%;
+                display: inline-block;
+                .jp-toggles {
+                    top: -30px;
+                    right: 10px;
+                }
+            }
+        }
+        .jp-progress {
+            margin-bottom: 30px;
+        }
+        .duration-2 {
+            position: absolute;
+            bottom: 0;
+            height: 27px;
+            width: 100%;
+            background: #777777;
+            span {
+                line-height: 27px;
+                color: $white_clr;
+            }
+        }
+    }
+    .player-main-block {
+        width: 50%;
+        float: left;
+    }
+    .trackInfo {
+        width: 50% !important;
+        float: right;
+        position: relative;
+    }
+}

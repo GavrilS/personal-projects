@@ -1,0 +1,38 @@
+myVideo {
+    position: fixed; right: 0; bottom: 0;
+    min-width: 100%; min-height: 100%;
+    z-index: -100;
+    background-size: cover;
+}
+.table {
+    display:table;
+}
+.header {
+    display:table-header-group;
+    font-weight:bold;
+}
+.rowGroup {
+    display:table-row-group;
+}
+.row {
+    display:table-row;
+}
+.cell {
+    display:table-cell;
+    width:25%;
+}
+.error {
+    color: red;
+}
+
+.btn-conf {
+    background: chocolate;
+    color: black;
+    border: coral;
+    width: 50%;
+    padding: 10px;
+    margin: 10px 5px 5px 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+}

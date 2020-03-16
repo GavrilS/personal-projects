@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <style>
+        body {
+            background-image: url(/image/generate.jpg);
+            background-size: 100%;
+            background-attachment: fixed;
+            opacity: 0.8;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--     Bootstrap core CSS -->
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.js" type="text/javascript"></script>
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/redmond/jquery-ui.css" rel="stylesheet"
+          type="text/css"/>
+    <title>About Us</title>
+</head>
+<body>
+<nav th:include="fragments/navbar" ></nav>
+</br>
+
+<div class="row row-cols-1 row-cols-md-2" style="opacity: 0.8;padding-left: 300px;padding-right: 300px">
+    <div class="col mb-4"style="justify-content: center">
+        <div class="card" align="center">
+            <img src="/image/denitsa.jpg" class="card-img-top" alt="..." style="width: 320px;height:450px;">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #6A2773;font-family: 'Kalam';
+                font-style: oblique;
+                font-weight: bold;font-size: 30px;">Denitsa Ruseva</h5>
+                <p class="card-text">A charming Junior Java Developer with sea passion. I like reading books, shooting with a gun and playing with Leggo. Graduated A16 Telerik Academy's cohort in February.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col mb-4" style="justify-content: center">
+        <div class="card" align="center">
+            <img src="/image/gavril.jpg" class="card-img-top" alt="..." style="width: 320px;height:450px;"/>
+            <div class="card-body">
+                <h5 class="card-title" style="color: #6A2773;font-family: 'Kalam';
+                font-style: oblique;
+                font-weight: bold;font-size: 30px;">Gavril Samodivekov</h5>
+                <p class="card-text">An aspiring Junior Java Developer with a penchant for visiting new places. I love animals, solving puzzles and trying new food. Graduated A16 Telerik Academy's cohort in February.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<span th:include="fragments/scripts-loader"></span>
+<footer th:include="fragments/footer"></footer>
+</body>
+</html>

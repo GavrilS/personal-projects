@@ -1,0 +1,586 @@
+/* This css file is to override bootstarp css
+********************************************************* /
+* Item Name: FxMusica
+* Item URI:  http://codepassenger.com/js-item/fxmusica
+* Author: CodePassenger
+* Author URI: http://CodePassenger.com
+* Description: Audio Player
+* Version: 1.0.0
+* License: GNU General Public License v2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* Tags: javascript plugin,music player,player, html5, plugin
+*********************************************************** /
+
+/*
+|----------------------------------------------------------------------------
+| CSS INDEX
+|----------------------------------------------------------------------------
+
+1. General Style
+
+2. Header Style
+
+3. Footer Style
+
+*/
+
+
+/*
+|----------------------------------------------------------------------------
+| 1. General Style
+|----------------------------------------------------------------------------
+*/
+
+html,
+html a {
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 26px;
+    color: #111;
+    font-weight: 400;
+}
+
+p {
+    line-height: 26px;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    line-height: 100%;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 14px;
+}
+
+img {
+    object-fit: cover;
+    display: inline-block;
+}
+
+.mrg-b-20 {
+    margin-bottom: 20px !important;
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition: 0.4s ease-in;
+    -o-transition: 0.4s ease-in;
+    transition: 0.4s ease-in;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: #111;
+    outline: 0;
+}
+
+div.jp-type-playlist div.jp-playlist a.active {
+    color: #fc73c5;
+}
+
+.section-padding {
+    padding: 120px 0;
+}
+
+.title-block h2 {
+    position: relative;
+    font-size: 46px;
+    line-height: 60px;
+    font-weight: 700;
+    margin-bottom: 75px;
+    color: #111;
+    font-family: "Montserrat", sans-serif;
+}
+
+.title-block h2:before {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 70px;
+    left: 0;
+    bottom: -30px;
+    background: #111;
+}
+
+.player-wrap .jp-artist {
+    font-size: 12px;
+}
+
+iframe {
+    border: 0;
+}
+
+.audio-controller-wrap {
+    position: relative;
+}
+
+.album-art-block.size-two img {
+    height: 450px !important;
+}
+
+.jp-details .jp-title {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0;
+}
+
+.playlist-btn-block {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+.playlist-btn-block button {
+    background: transparent;
+}
+
+.playlist-btn-block button:before {
+    content: "\f0c9";
+    left: 0;
+    right: 0;
+    top: 0;
+    font-size: 14px;
+    color: #777777;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'FontAwesome';
+}
+
+.playlist-btn-block.two {
+    bottom: auto;
+    top: 18px;
+    z-index: 99999;
+}
+
+.playlist-btn-block.two button:before {
+    content: "\f0ca";
+    color: #fff;
+}
+
+.playlist-btn-block.two button.active:before {
+    color: #fc73c5;
+}
+
+.left-align,
+.right-align {
+    display: inline-block;
+    width: 49%;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.player-layout-three .jp-playlist,
+.player-layout-four .jp-playlist {
+    display: none;
+}
+
+.playlist-hide {
+    display: none;
+}
+
+.audio-share-block {
+    position: relative;
+}
+
+.audio-share-block i.fa {
+    cursor: pointer;
+}
+
+.audio-share-block .share-option {
+    position: absolute;
+    right: 20px;
+    top: 0;
+}
+
+.playlist-wrap {
+    position: relative;
+}
+
+.audio-share-block i.fa.active {
+    color: #fc73c5;
+}
+
+.option-icon-list {
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+.option-icon-list a {
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 16px;
+}
+
+.option-icon-list .playlist-icon {
+    height: 33px;
+    width: 33px;
+    background: #fc73c5;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 33px;
+    margin: 8px 3px;
+    display: inline-block;
+    position: relative;
+}
+
+.option-icon-list .playlist-icon:before {
+    content: "\f04b";
+    color: #fff;
+    font-family: 'FontAwesome';
+}
+
+.jp-playlist-current .playlist-icon:before {
+    content: "\f028";
+}
+
+div.jp-type-playlist div.jp-playlist a {
+    cursor: pointer;
+}
+
+.playlist-wrap .jp-playlist .payment-list {
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    background: #fc73c5;
+    position: absolute;
+    width: 100%;
+    bottom: -28px;
+    left: 0;
+    display: block;
+    z-index: 99;
+}
+
+.playlist-wrap .jp-playlist .payment-list li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.playlist-wrap .jp-playlist .payment-list li a {
+    font-size: 18px;
+    color: #fff;
+}
+
+.playlist-wrap .jp-playlist .payment-list li a:hover {
+    color: #fff;
+}
+
+.share-option {
+    margin: 0;
+    padding: 5px 0;
+    width: 110px;
+    text-align: center;
+    background: #fc73c5;
+    display: none;
+}
+
+.share-option li {
+    display: inline-block;
+    margin: 0 7px;
+}
+
+.share-option li a {
+    color: #fff;
+}
+
+.jp-video .jp-volume-controls.volume-style-two-wrap {
+    width: 60%;
+    top: 50px;
+    left: 17%;
+}
+
+.jp-video .jp-volume-controls.volume-style-two-wrap .jp-volume-bar {
+    width: 100%;
+}
+
+.volume-style-two {
+    height: 2px;
+    overflow: visible;
+}
+
+.volume-style-two .jp-volume-bar-value {
+    height: 2px;
+    top: 0;
+    background: url(../assets/image/player-clr.jpg) 0 0 repeat-x;
+}
+
+.volume-style-two .jp-volume-bar-value:before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #fc73c5;
+    border-radius: 50%;
+    right: -10px;
+    top: -9px;
+}
+
+.volume-style-three.jp-volume-controls button {
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;
+    background: #fc73c5;
+}
+
+.volume-style-three.jp-volume-controls button:before {
+    color: #fff;
+}
+
+.volume-style-three.jp-volume-controls .jp-mute:focus,
+.volume-style-three.jp-volume-controls .jp-state-muted .jp-mute:focus,
+.volume-style-three.jp-volume-controls .jp-state-muted .jp-mute {
+    background: #fc73c5;
+}
+
+.jp-video .player-controller-style-two .jp-toggles {
+    position: relative;
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+}
+
+.jp-video .player-controller-style-two .jp-toggles button {
+    float: none;
+    margin: 0 auto;
+}
+
+.player-controller-style-two {
+    position: relative;
+}
+
+.player-controller-style-two .jp-controls {
+    position: absolute;
+    top: -15px;
+    overflow: visible;
+}
+
+.player-controller-style-two .controller-common {
+    margin: 0 -5px;
+}
+
+.player-controller-style-two .controller-common.jp-play {
+    width: 64px;
+    height: 64px;
+    margin-bottom: -5px;
+    line-height: 64px;
+    vertical-align: bottom;
+    border: 1px solid #e7e7e7;
+    position: relative;
+    z-index: 99;
+}
+
+.progress-block-two {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.progress-block-two .jp-progress {
+    width: 62%;
+    margin: 0 auto;
+}
+
+.progress-block-two span {
+    position: absolute;
+    top: -4px;
+}
+
+.progress-block-two .jp-current-time {
+    left: 0;
+}
+
+.progress-block-two .jp-duration {
+    right: 0;
+}
+
+.jp-video .prograss-style-two .jp-progress {
+    height: 2px;
+    overflow: visible;
+}
+
+.jp-video .prograss-style-two .jp-progress .jp-play-bar {
+    position: relative;
+    overflow: visible !important;
+}
+
+.jp-video .prograss-style-two .jp-progress .jp-play-bar:before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #fc73c5;
+    border-radius: 50%;
+    right: -10px;
+    top: -9px;
+}
+
+
+/*
+|----------------------------------------------------------------------------
+| 2. Header Style
+|----------------------------------------------------------------------------
+*/
+
+.page-header {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background-position: center center;
+    background-size: cover;
+}
+
+.page-header .overlay {
+    background-color: rgba(17, 17, 17, 0.77);
+}
+
+.navbar.navbar-default {
+    background-color: rgba(255, 255, 255, 0.11);
+    border: none;
+    margin: 0;
+    border-radius: 0;
+    min-height: 100px;
+}
+
+.navbar.navbar-default .navbar-brand {
+    height: 100px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.navbar.navbar-default .navbar-nav {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.navbar.navbar-default .navbar-nav > li > a {
+    background-color: #fc73c5;
+    color: #ffffff;
+    border-radius: 25px;
+}
+
+.navbar.navbar-default .navbar-nav > li > a.btn-buy {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.navbar.navbar-default .navbar-toggle {
+    border-color: #fc73c5;
+    margin-top: 33px;
+    margin-bottom: 33px;
+}
+
+.navbar.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fc73c5;
+}
+
+.navbar.navbar-default .navbar-toggle:focus,
+.navbar.navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
+
+.page-title {
+    font-size: 64px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    padding: 180px 0 176px;
+}
+
+.navbar-header a.btn-buy {
+    background-color: #fc73c5;
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 15px 50px;
+    line-height: 20px;
+    margin: 25px 15px 25px 0;
+    float: right;
+    display: none;
+}
+
+
+/*
+|----------------------------------------------------------------------------
+| Footer Styles
+|----------------------------------------------------------------------------
+*/
+
+footer {
+    background-image: url(../assets/image/footer.jpg);
+    background-position: center center;
+    background-size: cover;
+    padding-top: 125px;
+    color: #ffffff;
+}
+
+footer .footer-logo {
+    display: inline-block;
+}
+
+footer .socials {
+    margin-top: 16px;
+}
+
+footer .socials a {
+    display: inline-block;
+    font-size: 16px;
+}
+
+footer .socials a:hover {
+    color: #fc73c5;
+}
+
+footer .socials a + a {
+    margin-left: 30px;
+}
+
+footer .copyright-text {
+    font-family: "Montserrat", sans-serif;
+    margin-top: 90px;
+}

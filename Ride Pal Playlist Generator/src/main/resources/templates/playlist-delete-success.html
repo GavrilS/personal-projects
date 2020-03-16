@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <style>
+        body {
+            background-image: url(/image/generate.jpg);
+            background-size: 100%;
+            background-attachment: fixed;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--     Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Playlist Delete success</title>
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid"style="opacity: 0.7;">
+    <h1 class="display-4"
+        style="text-align: center;
+                font-family: 'Kalam';
+                font-style: oblique;
+                font-weight: bold;
+                font-size: 40px ;color:#A65188">Deleted Confirmation Page</h1>
+    <br/>
+    <p class="lead"
+       style="text-align: center;
+                font-family: 'Kalam';
+                font-style: oblique;
+                font-weight: bold;
+                font-size: 32px;color: #A65188;
+text-shadow: 2px 2px #A65170 ;">You have successfully deleted your playlist!</p>
+</div>
+<meta http-equiv="refresh" content="3;url=/"/>
+<span th:include="fragments/scripts-loader"></span>
+<footer th:include="fragments/footer"></footer>
+</body>
+</html>

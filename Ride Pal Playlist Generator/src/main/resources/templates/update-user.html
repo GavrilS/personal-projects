@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <style>
+        body {
+            background-image: url(/image/profile.jpeg);
+            background-size: 100%;
+            background-attachment: fixed;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--     Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>User Profile</title>
+</head>
+<body>
+<nav th:include="fragments/navbar"></nav>
+</br> </br>
+
+<div class="tab-content" id="nav-tabContent" style="opacity: 0.7;border-radius: 5%;">
+    <div class="tab-pane fade show active" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+        <div class="card text-center mb-xl-3 mx-auto" style="max-width: 800px;">
+            <div class="row no-gutters justify-content-center">
+                <div class="col-md-12 justify-content-center">
+                    </br> </br>
+                    <div class="row no-gutters justify-content-center">
+
+                        <div class="col-md-6 justify-content-center">
+
+                            <div th:if="${user.picture == null}" style="text-align: center;">
+                                <img src="/image/default.jpeg"
+                                     style="border-radius: 5%;box-shadow:10px 10px #1e3033 ;" width="260" ;
+                                     height="260">
+                            </div>
+                            <div th:unless="${user.picture == null}" style="text-align: center;">
+                                <img th:src="@{'data:image/jpeg;base64,' + ${user.picture}}" alt="image"
+                                     style="border-radius: 5%;box-shadow: 10px 10px #1e3033;" width="260" ;
+                                     height="260">
+                            </div>
+                            </br> </br>
+                            <button type="submit" class="button edit" form="form-horizontal" style="color: #A65188">
+                                Update
+                            </button>
+                            </br> </br>
+                        </div>
+                        <div class="col-md-6 content-start">
+                            <div class="card-body content-start">
+                                <div style="padding-right: 20px">
+                                    <form class="form-horizontal" id="form-horizontal" action="#"
+                                          th:action="@{'/users/username/' + ${user.username} + '/update'}"
+                                          th:object="${user}"
+                                          method="post"
+                                          enctype="multipart/form-data">
+                                        <h5 class="card-title" style="font-family: 'Kalam';
+                font-style: oblique;
+                font-weight: bold;
+                font-size: 30px ;color:#A65188">Update profile</h5>
+                                        <label>Username:</label>
+                                        <h3 th:text="${user.username}" style="font-family: 'Kalam';
+                font-weight: bold;
+                font-size: 25px ;color:#A65188">Username:</h3>
+                                        <div class="float-right" style="padding-right: 25px">
+                                            <div class="float-right">
+                                                <label>Email:</label>
+                                                <input type="email" th:field="*{email}" id="email" placeholder="Email"
+                                                       minlength="6" maxlength="60"
+                                                       required autofocus style="justify-content: center"/>
+                                            </div>
+                                            <div class="float-right">
+                                                <label>First name:</label>
+                                                <input type="text" th:field="*{firstName}" id="firstName"
+                                                       placeholder="First Name" minlength="2" maxlength="60"
+                                                       required autofocus style="justify-content: center"/>
+                                            </div>
+                                            <div class="float-right">
+                                                <label>Last name:</label>
+                                                <input type="text" th:field="*{lastName}" id="lastName"
+                                                       placeholder="Last Name" minlength="2" maxlength="60"
+                                                       required autofocus style="justify-content: center"/></div>
+                                            <div class="float-right">
+                                                <label>Age:</label>
+                                                <input type="number" th:field="*{age}" id="age" placeholder="Age"
+                                                       style="justify-content: center"/>
+                                            </div>
+                                            <div class="float-right">
+                                                <input type="file" name="file" id="file" placeholder="Picture">
+                                            </div>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<span th:include="fragments/scripts-loader"></span>
+<footer th:include="fragments/footer"></footer>
+
+</body>
+</html>

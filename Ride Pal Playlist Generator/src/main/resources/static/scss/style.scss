@@ -1,0 +1,31 @@
+/* This css file is to override bootstarp css
+********************************************************* /
+* Item Name: FxMusica
+* Item URI:  http://codepassenger.com/js-item/fxmusica
+* Author: CodePassenger
+* Author URI: http://CodePassenger.com
+* Description: Audio Player
+* Version: 1.0.0
+* License: GNU General Public License v2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* Tags: javascript plugin,music player,player, html5, plugin
+*********************************************************** /
+
+/*
+|----------------------------------------------------------------------------
+| CSS INDEX
+|----------------------------------------------------------------------------
+
+1. General Style
+
+2. Header Style
+
+3. Footer Style
+
+*/
+
+@import "./general";
+@import "./header";
+@import "./variable";
+@import "./mixins";
+@import "./footer";

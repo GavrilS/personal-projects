@@ -1,0 +1,32 @@
+/*
+|----------------------------------------------------------------------------
+| Footer Styles
+|----------------------------------------------------------------------------
+*/
+footer{
+    background-image: url(../assets/image/footer.jpg);
+    background-position: center center;
+    background-size: cover;
+    padding-top: 125px;
+    color: #ffffff;
+    .footer-logo{
+        display: inline-block;
+    }
+    .socials{
+        margin-top: 16px;
+        a{
+            display: inline-block;
+            font-size: 16px;
+            &:hover{
+                color: $player_pink_clr;
+            }
+            + a{
+                margin-left: 30px;
+            }
+        }
+    }
+    .copyright-text{
+        font-family: $montserrat_font;
+        margin-top: 90px;
+    }
+}

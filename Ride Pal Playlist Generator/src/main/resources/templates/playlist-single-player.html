@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        #playListEleven {
+            height: 440px !important;
+            opacity: 0.9;
+        }
+
+        .slimScrollDiv {
+            height: 440px !important;
+        }
+
+        body {
+            background-image: url(/image/generate.jpg);
+            background-size: 100%;
+            background-attachment: fixed;
+            opacity: 0.8;
+        }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Responsive HTML5 jQuery Audio Player">
+    <meta name="author" content="CodePassenger">
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=css?family=Montserrat%7cMontserrat:300,400,700%7cPoppins"
+          rel="stylesheet" type='text/css'>
+
+    <!-- CSS Plugins -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/jplayer.blue.monday.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/fxmusica.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fxmusica-responsive.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Audio Player</title>
+
+</head>
+<body>
+<nav th:include="fragments/navbar"></nav>
+
+<label style="color: #6A2773;font-family: 'Kalam';
+                font-style: oblique;
+                font-weight: bold;font-size: 30px; padding-left: 200px">Playlist title:</label>
+<h2 th:text="${playlist.title}"  style="color: #EFD8F2;font-family: 'Kalam';
+                font-style: oblique;font-weight: bold;font-size: 40px ;padding-left: 230px">Playlist title: </h2>
+
+<div class="container-wrap section-padding">
+    <div class="container" id="playlist" th:action="@{'/playlists/'+${playlist.id}}" th:method="get"
+         enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <!-- Player Style 11 -->
+                <div class="player-wrap fxmusica">
+                    <div class="player-main-block player-layout-eleven jp-video jp-video-270p"
+                         aria-label="media player">
+                        <div class="jp-type-playlist">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div>
+                                        <div class="album-art-block size-two">
+                                            <div id="player-eleven" class="jp-jplayer">
+                                            </div>
+                                            <div class="jp-details track-meta-info">
+                                                <div class="jp-title" aria-label="title">&nbsp;</div>
+                                            </div>
+                                            <div class="overlay-one"></div>
+                                            <div class="playlist-btn-block two">
+                                                <button id="playListBtnEight"
+                                                        class="jp-playlist playlist-btn toggleBlock active"></button>
+                                            </div>
+                                        </div>
+                                        <div class="jp-gui audio-controller-wrap">
+                                            <div class="jp-video-play">
+                                                <button class="jp-video-play-icon" tabindex="0">play</button>
+                                            </div>
+                                            <div class="jp-interface">
+                                                <div class="jp-progress">
+                                                    <div class="jp-seek-bar">
+                                                        <div class="jp-play-bar"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="player-controller-style-three">
+                                                    <div class="jp-controls">
+                                                        <button class="jp-previous controller-common"
+                                                                tabindex="0"></button>
+                                                        <button class="jp-play controller-common" tabindex="0"></button>
+                                                        <button class="jp-next controller-common" tabindex="0"></button>
+                                                        <div class="jp-volume-controls volume-style-three">
+                                                            <button class="jp-mute" tabindex="0"></button>
+                                                            <div class="jp-volume-bar">
+                                                                <div class="jp-volume-bar-value"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="jp-controls-holder">
+                                                        <div class="jp-toggles">
+                                                            <button class="jp-shuffle" tabindex="0"></button>
+                                                            <button class="jp-repeat" tabindex="0"></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="duration-2">
+                                                <span class="jp-current-time" aria-label="time">&nbsp;</span>
+                                                <span class="divider">/</span>
+                                                <span class="jp-duration" aria-label="duration">&nbsp;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col-lg-6 -->
+                                <div class="col-sm-6">
+                                    <div id="playListEight" class="jp-playlist playlist-block-style-five">
+                                        <ul class="playlist duration-playlist">
+                                            <li>&nbsp;</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/tether.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/jquery.slimscroll.min.js"></script>
+<script src="/assets/js/jquery.jplayer.js"></script>
+<script src="/assets/js/jplayer.playlist.js"></script>
+<script src="/js/fxmusica.js"></script>
+
+<script type="text/javascript" th:inline="javascript">
+    $(document).ready(function () {
+        let allTracks = [[${playlist.getTracks()}]];
+        let tracks = [];
+        for (let i = 0; i < allTracks.length; i++) {
+            tracks.push({
+                title: allTracks[i].title,
+                artist: "RidePal",
+                mp3: allTracks[i].preview,
+                poster: 'data:image/png;base64,' + [[${playlist.getPicture()}]],
+                duration: sec2mins(allTracks[i].duration)
+            });
+        }
+
+        new jPlayerPlaylist({
+            jPlayer: "#player-eleven",
+            cssSelectorAncestor: ".player-layout-eleven"
+        }, tracks, {
+            swfPath: "../../dist/jplayer",
+            supplied: "webmv, ogv, m4v, oga, mp3",
+            useStateClassSkin: true,
+            autoBlur: false,
+            smoothPlayBar: true,
+            keyEnabled: true,
+            loop: true,
+            audioFullScreen: true
+        });
+
+        function sec2mins(timeInMins) {
+            var pad = function (num, size) {
+                    return ('000' + num).slice(size * -1);
+                }, time = parseFloat(timeInMins).toFixed(3), hours = Math.floor(time / 60 / 60),
+                minutes = Math.floor(time / 60) % 60, seconds = Math.floor(time - minutes * 60);
+            return pad(minutes, 2) + ':' + pad(seconds, 2);
+        }
+    });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<!--<footer th:include="fragments/footer"></footer>-->
+</body>
+</html>

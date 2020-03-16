@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Playlist Generator</title>
+        <style>
+            #myVideo {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                min-width: 100%;
+                min-height: 100%;
+            }
+        </style>
+</head>
+<body>
+<!--video-->
+<nav th:include="fragments/navbar" ></nav>
+<div id="myBackground">
+    <video autoplay muted loop id="myVideo" style="z-index: -10">
+        <source src="/image/music.mp4" type="video/mp4">
+    </video>
+</div>
+
+
+    <div class="card-deck"style="margin-top: 450px;opacity: 0.8">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1527684002373-02a02a68e86f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80"
+                 class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center;
+                font-family: 'Kalam';
+                font-style: oblique;
+                font-weight: bold;
+                font-size: 40px ;color:#732D60">Hip-Hop</h5>
+                <p class="card-text" style="margin-right: 40px;
+  margin-left: 40px;">Hip hop or hip-hop, is a culture and art movement that was created by African Americans, Latino Americans and
+                    Caribbean Americans in the Bronx, New York City. The origin of the name is often disputed. It is also argued
+                    as to whether hip hop started in the South or West Bronx.While the term hip hop is often used to refer
+                    exclusively to hip hop music (including rap),hip hop is characterized by nine elements, of which only four
+                    are considered essential to understanding hip hop musically.
+                    Other elements of hip hop subculture and arts movements beyond the main four are: hip hop culture and historical
+                    knowledge of the movement, beatboxing, hip hop language; and hip hop fashion and style.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                 class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"style="text-align: center;
+                font-family: 'Kalam';
+                font-style: oblique;
+                font-weight: bold;
+                font-size: 40px ;color:#732D60">Rock</h5>
+                <p class="card-text" style="margin-right: 40px;
+  margin-left: 40px;">Rock music is a broad genre of popular music that originated as "rock and roll" in the United States
+                    in the early 1950s, and developed into a range of different styles in the 1960s and later,
+                    particularly in the United States and the United Kingdom.It has its roots in 1940s and 1950s
+                    rock and roll, a style which drew heavily from the genres of blues, rhythm and blues, and from
+                    country music. Rock music also drew strongly from a number of other genres such as electric blues
+                    and folk, and incorporated influences from jazz, classical and other musical styles. Musically,
+                    rock has centered on the electric guitar, usually as part of a rock group with electric bass,
+                    drums, and one or more singers. </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80"
+                 class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"style="text-align: center;
+                font-family: 'Kalam';
+                font-style: oblique;
+                font-weight: bold;
+                font-size: 40px ;color:#732D60">Jazz</h5>
+                <p class="card-text" style="margin-right: 40px;
+  margin-left: 40px;">Jazz is a music genre that originated in the African-American communities of New Orleans,
+                    United States.It originated in the late 19th and early 20th centuries, and developed from
+                    roots in blues and ragtime.Jazz is seen by many as "America's classical music".Since the 1920s
+                    Jazz Age, jazz has become recognized as a major form of musical expression. It then emerged in
+                    the form of independent traditional and popular musical styles, all linked by the common bonds
+                    of African-American and European-American musical parentage with a performance orientation. Jazz
+                    is characterized by swing and blue notes, call and response vocals, polyrhythms and improvisation.
+                    Jazz has roots in West African cultural and musical expression.</p>
+            </div>
+        </div>
+    </div>
+    <br/>
+<span th:include="fragments/scripts-loader"></span>
+<footer th:include="fragments/footer"></footer>
+
+</body>
+</html>
