@@ -96,14 +96,14 @@ public class PlaylistRestController {
         }
     }
 
-    @DeleteMapping("/user/{id}")
-    public void deletePlaylistByUserId(@PathVariable Integer id){
-        try{
-            playlistService.deleteByUserId(id);
-        }catch(EntityNotFoundException e){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
-        }
-    }
+//    @DeleteMapping("/user/{id}")
+//    public void deletePlaylistByUserId(@PathVariable Integer id){
+//        try{
+//            playlistService.deleteByUserId(id);
+//        }catch(EntityNotFoundException e){
+//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+//        }
+//    }
 
     @GetMapping("userplaylists/{userId}")
     public List<Playlist> getAllUserPlaylist(@PathVariable Integer userId){

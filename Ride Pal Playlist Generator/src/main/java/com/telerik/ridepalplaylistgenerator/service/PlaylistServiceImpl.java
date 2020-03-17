@@ -94,12 +94,6 @@ public class PlaylistServiceImpl implements PlaylistService {
         return playlistRepository.getByTitle(title).size() != 0;
     }
 
-    @Override
-    public void deleteByUserId(Integer id) {
-        Playlist playlistToUpdate = (Playlist) playlistRepository.findAllByUserID(id);
-        playlistToUpdate.setEnabled(false);
-        playlistRepository.save(playlistToUpdate);
-    }
 
     @Override
     public List<Playlist> filterByName(String name) {

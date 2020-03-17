@@ -24,7 +24,7 @@ public interface PlaylistService {
 
     Playlist updatePlaylist(Playlist playlist, int id);
 
-    void deleteByUserId(Integer id);
+//    void deleteByUserId(Integer id);
 
     List<Playlist> filterByName(String name);
 
